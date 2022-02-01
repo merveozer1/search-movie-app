@@ -29,6 +29,7 @@ function Discover(props) {
         data?.filter((item) => item.title.toLowerCase().includes(search.toLowerCase()))
       )
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search])
 
   return (

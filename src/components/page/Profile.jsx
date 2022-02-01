@@ -19,6 +19,7 @@ const Profile = (props) => {
   const { user } = useSelector(state => state)
   console.log(user)
   const dispatch = useDispatch()
+  // eslint-disable-next-line no-unused-vars
   const FavList = (e) => {
     console.log(userData)
     e.preventDefault();

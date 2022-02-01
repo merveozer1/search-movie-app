@@ -17,6 +17,7 @@ function Trending(props) {
   }
 
   const [period, setPeriod] = useState("day");
+  // eslint-disable-next-line no-unused-vars
   const [currentPageData, setCurrentPageData] = useState([]);
   console.log("props", props);
   const { data } = useQuery(

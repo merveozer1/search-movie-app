@@ -27,6 +27,7 @@ function ThemeContextProvider(props) {
     : localStorage.setItem("themeName", themeName);
 
     setThemeName(localThemeName);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []) 
   
   useEffect(() => {

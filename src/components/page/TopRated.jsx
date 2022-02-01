@@ -22,11 +22,13 @@ function TopRated(props){
         
         useEffect(() => {
             data[0]?.refetch()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
         data[period.length]?.refetch()
       
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [period]);
 
     console.log(period);

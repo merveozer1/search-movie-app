@@ -29,6 +29,7 @@ function Popular(props){
     useEffect(() => {
         data[period.length]?.refetch()
       
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [period]);
 
     console.log(period);
