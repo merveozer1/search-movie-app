@@ -33,6 +33,8 @@ function TopRated(props){
  return (
  <>
  < SortFilter />
+ <div className="container-fluid top-rated-app" >
+ <div className="row m-3 justify-content-start" >
  {
 data?.map(item => item?.data?.data?.results?.map((item) => (
     <div key={item.id} className="col-sm" >
@@ -40,7 +42,7 @@ data?.map(item => item?.data?.data?.results?.map((item) => (
         <Link to={"/detail/" + item.id} style={{ textDecoration: "none" }}>
           <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500` + item.poster_path}  />
         </Link>
-        <Card.Body style={{ width: '18rem', height: '15rem' }} className="d-flex flex-column justify-content-end" >
+        <Card.Body style={{ width: '18rem', height: '15rem' }} className="d-flex flex-column justify-content-end py-3" >
           <Card.Title className="text-muted">{item.title}</Card.Title>
           <Card.Text className="text-muted">
             RELEASE DATE: {item.release_date}
@@ -55,6 +57,8 @@ data?.map(item => item?.data?.data?.results?.map((item) => (
     </div>
   )))
 }
+</div>
+</div>
 <button onClick={() => setPeriod([...period, period.length+1]) }> Load More </button>
  </>
  )

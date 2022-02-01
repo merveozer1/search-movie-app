@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import ReactPaginate from 'react-paginate'
 import { SearchContext } from "../../context/SearchContext";
@@ -8,9 +8,9 @@ import { useQuery } from "react-query";
 
 function Pagination(props) {
   let pageCount
-  const { searchValue, setSearchValue } = useContext(SearchContext)
+  const { searchValue } = useContext(SearchContext)
   const { selectedPage, perPage, handlePageClick } = useContext(PaginationContext)
-  const { isLoading, isError, error, isFetched, isFetching, data, ...query } =
+  const { isFetched, data,  } =
     useQuery(["search movies", searchValue], () => fetchSearchMovies(searchValue), {
       select: (data) => data?.data?.results,
       retry: false,

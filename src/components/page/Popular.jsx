@@ -1,12 +1,12 @@
 import React from 'react';
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import SortFilter from "./SortFilter";
 import { fetchPopularMovies } from "../../api"
 import { useQueries } from "react-query";
 import { Link } from 'react-router-dom';
 import {Card} from 'react-bootstrap'
 import Icons from "./Icons"
-import css from '../../styledComponent/index.css';
+import '../../styledComponent/index.css';
 
 function Popular(props){
     const [period, setPeriod] = useState([1]);
@@ -24,7 +24,7 @@ function Popular(props){
         
         useEffect(() => {
             data[0]?.refetch()
-    }, []);
+    }, [data]);
 
     useEffect(() => {
         data[period.length]?.refetch()
