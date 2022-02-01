@@ -3,7 +3,6 @@ import Home from "./components/page/Home";
 // import SortFilter from "./components/page/SortFilter";s
 import Login from "./components/page/Login";
 import About from "./components/page/About";
-import Search from "./components/page/Search";
 import Profile from "./components/page/Profile";
 import Popular from "./components/page/Popular";
 import TopRated from "./components/page/TopRated";
@@ -17,7 +16,6 @@ export const routes = [
   {name: "Movies", pathname: "sort-filter/popular", element: Popular, isNav:true},
   {name: "Movies", pathname: "movies/sort-filter/popular", element: Popular, isNav:true},
   {name: "Contact", pathname: "/contact", element: Contact, isNav:true},
-  // {name: "Movies", pathname: "/movies", element: Movies, isNav:true},
   {name: "Profile", pathname: "/profile", element: Profile, isNav:true},
   {name: "Login", pathname: "/login", element: Login, isNav:true},
   {name: "Detail", pathname: "/detail/:detailId", element: Detail, isNav:false},
