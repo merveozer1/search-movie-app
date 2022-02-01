@@ -1,6 +1,5 @@
 import Detail from "./components/page/Detail";
 import Home from "./components/page/Home";
-// import SortFilter from "./components/page/SortFilter";s
 import Login from "./components/page/Login";
 import About from "./components/page/About";
 import Profile from "./components/page/Profile";
@@ -8,7 +7,6 @@ import Popular from "./components/page/Popular";
 import TopRated from "./components/page/TopRated";
 import SortFilter from "./components/page/SortFilter";
 import Contact from "./components/page/Contact";
-// import NotFound from "./page/NotFound";
 
 export const routes = [
   {name: "Home", pathname: "/", element: Home, isNav:true},

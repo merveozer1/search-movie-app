@@ -10,7 +10,7 @@ export const fetchSingleMovie = (movieId) => BASE_AXIOS.get(`https://api.themovi
 
 export const fetchTrendingMovies = (time_window) => BASE_AXIOS.get(`/trending/movie/${time_window}?api_key=${API_KEY}&page=1`);
 export const fetchTopRatedMovies = (period) => BASE_AXIOS.get(`/movie/top_rated?api_key=${API_KEY}&page=${period}`);
-export const fetchPopularMovies = (period) => BASE_AXIOS.get(`/movie/popular?api_key=${API_KEY}&page=${period}`);
+export const fetchPopularMovies = () => BASE_AXIOS.get(`/movie/popular?api_key=${API_KEY}&page=1`);
 
 // export const fetchPeopleMovies = (personId) => BASE_AXIOS.get(`/person/movie/${personId}?api_key=${API_KEY}&page=1`);
 export const fetchSingleMovieCredits = (movieId) => BASE_AXIOS.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}`)

@@ -7,10 +7,8 @@ const Profile = (props) => {
     var mylist = document.getElementById("myList");
     document.getElementById("favourite").value = mylist.options[mylist.selectedIndex].text;
   }
-  
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState("");
-  const [userData, setUserData] = useState({
+
+  const [userData] = useState({
   "favoritesList": {
     "favoritesFilms": [
     ],

@@ -10,7 +10,6 @@ import { useQuery } from "react-query";
 const SortFilter = (props) => {
   const params = useParams()
   console.log(params)
-  const dispatch = useDispatch()
 
   function favTutorial() {
     var mylist = document.getElementById("myList");
@@ -19,9 +18,7 @@ const SortFilter = (props) => {
   const [startDate, setStartDate] = useState(new Date());
   const [finishDate, setFinishDate] = useState(new Date());
 
-  const [search, setSearch] = useState("");
-  const [currentPageData, setCurrentPageData] = useState([]);
-  const { isLoading, isError, error, isFetched, isFetching, data, ...query } =
+  const { isLoading, isError, error, isFetched, isFetching, data } =
     useQuery("movie", fetchLatestMovies, {
       select: (data) => data.data.results,
       retry: false,
@@ -33,26 +30,11 @@ const SortFilter = (props) => {
   //    dispatch(getGenreFilter(val?.data?.genres))
   //  )
 
-  const perPage = 10;
-  const [totalPages, setTotalPages] = useState(1);
+  const [totalPages] = useState(1);
   const [page, setPage] = useState(1);
 
-  const [userList, setUserList] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 
-  useEffect(() => {
-    const getUserList = () => {
-      setLoading(true);
-      fetch(`/genre/movie/list?api_key=7593f05ab745408d769fe17bdfa6bc30/per_page=${perPage}&page=${page}`)
-        .then(res => res.json())
-        .then(res => {
-          setTotalPages(res.total_pages);
-          setUserList([...userList, ...res.data]);
-          setLoading(false);
-        });
-    }
-    getUserList();
-  }, [page]);
 
   return (
     <>
@@ -93,28 +75,7 @@ const SortFilter = (props) => {
           </Row>
         </Row>
       </Container>
-      {/* {
-
-        data?.map((item) => (
-          <div key={item.id} className="col-sm" >
-            <Card>
-              <Link to={"/latest/" + item.id} style={{ textDecoration: "none" }}>
-                <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500` + item.poster_path} style={{ width: '290px', height: '420px' }} />
-              </Link>
-              <Card.Body style={{ width: '18rem', height: '15rem' }} className="d-flex flex-column justify-content-end" >
-                <Card.Title className="text-muted">{item.title}</Card.Title>
-                <Card.Text className="text-muted">
-                  RELEASE DATE: {item.release_date}
-                </Card.Text>
-                <Card.Text className="text-muted flex-fill" >
-                  IMDB SCORE: {item.vote_average}
-                </Card.Text>
-                <Card.Text className="">
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-        ))} */}
+     
       <div>
       </div>
       {totalPages !== page && <button className="btn-load-more" onClick={() => setPage(page + 1)}>

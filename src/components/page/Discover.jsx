@@ -6,7 +6,7 @@ import { useQuery } from "react-query";
 import { Link } from 'react-router-dom';
 import { MdExplore } from "react-icons/md"
 import Icons from "./Icons"
-import css from '../../styledComponent/index.css';
+import '../../styledComponent/index.css';
 
 function Discover(props) {
   function MouseOver(event) {
@@ -15,16 +15,16 @@ function Discover(props) {
   function MouseOut(event) {
     event.target.style.margin = ''
   }
-  const [search, setSearch] = useState("");
-  const [currentPageData, setCurrentPageData] = useState([]);
-  const { isLoading, isError, error, isFetched, isFetching, data, ...query } =
+  const [search] = useState("");
+  const [setCurrentPageData] = useState([]);
+  const { data } =
     useQuery("movie", fetchDiscoverMovies, {
       select: (data) => data.data.results,
       retry: false,
     });
 
   useEffect(() => {
-    if (search != "") {
+    if (search !== "") {
       setCurrentPageData(
         data?.filter((item) => item.title.toLowerCase().includes(search.toLowerCase()))
       )
