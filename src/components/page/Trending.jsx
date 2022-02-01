@@ -1,11 +1,11 @@
 import React from 'react';
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { Card, Button } from 'react-bootstrap';
 import { fetchTrendingMovies } from "../../api"
 import { useQuery } from "react-query";
 import { Link } from 'react-router-dom';
 import { HiTrendingUp } from "react-icons/hi"
-import css from '../../styledComponent/index.css';
+import '../../styledComponent/index.css';
 import Icons from "./Icons"
 
 function Trending(props) {
