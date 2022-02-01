@@ -20,7 +20,7 @@ function About() {
 
             <p><a className='text-warning' href="https://www.themoviedb.org/">Click</a> to see TMDB Website {' '}-{' '}
               <a className='text-warning' href="https://developers.themoviedb.org/3">Click</a> to see API Documentation{' '}-{' '}
-              <a className='text-warning' href="https://github.com/merveozer1">Click</a> to see source code
+              <a className='text-warning' href="https://github.com/merveozer1/search-movie-app">Click</a> to see source code
             </p>
           </div>
         </div>
