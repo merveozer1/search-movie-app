@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { MdExplore } from "react-icons/md"
 import Icons from "./Icons"
 import '../../styledComponent/index.css';
+import {useSelector} from 'react-redux';
 
 function Discover(props) {
   function MouseOver(event) {
@@ -22,7 +23,11 @@ function Discover(props) {
       select: (data) => data.data.results,
       retry: false,
     });
+const state  = useSelector(state => state)
+useEffect(() =>{
+  console.log("state:::", state.user.favoritesList.favoritesFilms);
 
+}, [state])
   useEffect(() => {
     if (search !== "") {
       setCurrentPageData(
@@ -56,7 +61,8 @@ function Discover(props) {
                     <Card.Text className="text-muted flex-fill" >
                       IMDB SCORE: {item.vote_average}
                     </Card.Text>
-                    <Card.Text className=""> {< Icons movieId={item.id} movieTitle={item.title} />}
+                    <Card.Text className=""> { < Icons movieId={item.id} movieTitle={item.title} isFavorite={state.user.favoritesList.favoritesFilms.some((x) => x.id === item.id ? true : false)} /> }
+                
                     </Card.Text>
                   </Card.Body>
                 </Card>

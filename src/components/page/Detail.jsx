@@ -46,10 +46,10 @@ const Detail = (props) => {
           {
 
             movieCastData?.map(item =>
-              <img key={item} width={"120px"} height={"150px"} className="col-sm " src={item.profile_path === null ? `https://tigres.com.tr/wp-content/uploads/2016/11/orionthemes-placeholder-image-1.png` : `https://image.tmdb.org/t/p/w200${item?.profile_path}`} alt="" />
+              <img key={item} width={"120px"} height={"150px"} className="col-sm " src={item.profile_path === null ? `https://www.murcal.com/scs/extensions/Workdom/Summit_June_2021_2/1.0.0/img/no_image_available.jpeg` : `https://image.tmdb.org/t/p/w200${item?.profile_path}`} alt=""/>
               //<div >{item.name}</div>
               //     <div > {item.character}</div> 
-            )
+             )
           }
         </div>
       </div>

@@ -37,6 +37,7 @@ const SortFilter = (props) => {
   const [loading] = useState(false);
 
 
+
   return (
     <>
       <Container>
@@ -76,7 +77,6 @@ const SortFilter = (props) => {
           </Row>
         </Row>
       </Container>
-     
       <div>
       </div>
       {totalPages !== page && <button className="btn-load-more" onClick={() => setPage(page + 1)}>

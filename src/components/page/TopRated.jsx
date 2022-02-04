@@ -35,12 +35,12 @@ function TopRated(props){
  return (
  <>
  < SortFilter />
- <div className="container-fluid top-rated-app" >
+ <div className="container-fluid top-rated-app " >
  <div className="row m-3 justify-content-start" >
  {
 data?.map(item => item?.data?.data?.results?.map((item) => (
     <div key={item.id} className="col-sm" >
-      <Card>
+      <Card style={{padding: '4px', margin:'5px'}}>
         <Link to={"/detail/" + item.id} style={{ textDecoration: "none" }}>
           <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500` + item.poster_path}  />
         </Link>
@@ -52,7 +52,7 @@ data?.map(item => item?.data?.data?.results?.map((item) => (
           <Card.Text className="text-muted flex-fill" >
             IMDB SCORE: {item.vote_average}
           </Card.Text>
-          <Card.Text className=""> { < Icons movieId = {item.id} movieTitle = { item.title }/>} 
+          <Card.Text className=" justify-content-center "  > { < Icons movieId = {item.id} movieTitle = { item.title }/>} 
               </Card.Text>
         </Card.Body>
       </Card>

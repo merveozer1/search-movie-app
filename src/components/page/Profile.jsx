@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
-import { addFavList } from "../../reduxStore/users"
+import { addFavList, addSeenList } from "../../reduxStore/users"
 const Profile = (props) => {
   function favTutorial() {
     var mylist = document.getElementById("myList");
@@ -13,23 +13,27 @@ const Profile = (props) => {
     "favoritesFilms": [
     ],
     "totalCount": 0
-  }
+  },
+  "seenList": {
+      "seenFilms": [
+      ],
+      "totalCount": 0
+  },
 })
 
   const { user } = useSelector(state => state)
   console.log(user)
   const dispatch = useDispatch()
   // eslint-disable-next-line no-unused-vars
-  const FavList = (e) => {
+  const {FavList, seenList} = (e) => {
     console.log(userData)
     e.preventDefault();
     dispatch(addFavList(userData.userName, userData.movieId))
+    dispatch(addSeenList(userData.userName, userData.movieId))
     if (userData.users.find((user) => user.userName === userData.userName && user.password === userData.password)) {
         localStorage.setItem('isUserLoggedIn', true);
-        console.log('logged in');
-    } else {
-        console.log('giremedin :P');
-    }
+    }  
+    
 }
   return (
     <>
@@ -57,14 +61,23 @@ const Profile = (props) => {
               user.favoritesList.favoritesFilms.map((film) => (
                 <tr className="text-warning">
                   <td >
+                   <h6 className="text-danger"> { film?.id }  </h6>
+                  </td>
+                  <td>
+                    { film?.title } <h6 className="text-danger">(FavList)</h6>
+                  </td>
+                </tr>
+              )) }
+              {  user.seenList.seenFilms.map((film) => (
+                <tr className="text-warning">
+                  <td >
                     { film?.id }
                   </td>
                   <td>
-                    { film?.title }
+                  { film?.title } <h6 className="text-danger">(SeenList)</h6>
                   </td>
                 </tr>
-              ))
-            }
+              ))}
           </tbody>
         </table>
       </div>
