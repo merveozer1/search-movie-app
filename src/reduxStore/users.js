@@ -53,10 +53,10 @@ const users = (user = {
             case LOGOUT_USER:
                 return {...user, userLogin : false}
             case ADD_FAV_MOVIES:
-                return !user.favoritesList.favoritesFilms.includes(action.payload) ?
+                return user.favoritesList.favoritesFilms.some((film) => film.id !== action.payload.id) ?
                     { ...user, favoritesList: { favoritesFilms: [...user.favoritesList.favoritesFilms, action.payload], totalCount: user.favoritesList.totalCount + 1 } } : user
             case ADD_SEEN_MOVIES:
-                return !user.seenList.seenFilms.includes(action.payload) ?
+                return user.seenList.seenFilms.some((film) => film.id !== action.payload.id) ?
                     { ...user, seenList: { seenFilms: [...user.seenList.seenFilms, action.payload], totalCount: user.seenList.totalCount + 1 } } : user
             default:
                 return user

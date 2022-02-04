@@ -10,14 +10,13 @@
 
 
 
-  .favorites button:hover { color: black; }
+ .favorites button:hover { color: black; }
   .favorites button:hover { background: grey; } 
   .favorites button:active { color: black; }
   .favorites button:hover:active { color: #eb2f06; }
   .favorites button:focus{ background: #eb2f06;
     display: block;
-  }
-
+  } 
 
 p:active { background: #eee; } 
 .trending-app > .row {

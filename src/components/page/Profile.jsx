@@ -64,7 +64,7 @@ const Profile = (props) => {
                    <h6 className="text-danger"> { film?.id }  </h6>
                   </td>
                   <td>
-                    { film?.title } <h6 className="text-danger">(FavList)</h6>
+                    { film?.title } <h6 className="text-danger">(Favorited)</h6>
                   </td>
                 </tr>
               )) }

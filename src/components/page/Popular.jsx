@@ -42,6 +42,7 @@ function Popular(props){
 data?.map(item => item?.data?.data?.results?.map((item) => (
     <div key={item.id} className="col-sm" >
       <Card style={{padding: '4px', margin:'5px'}}>
+      {/* , width:'290px', height:'420px' */}
         <Link to={"/detail/" + item.id} style={{ textDecoration: "none" }}>
           <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500` + item.poster_path}  />
         </Link>

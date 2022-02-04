@@ -5,7 +5,7 @@ import { Card, Button, Container, Row, Col } from "react-bootstrap"
 import { useDispatch } from "react-redux";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { fetchLatestMovies } from "../../api"
+import { fetchLatestMovies, fetchSortFilter } from "../../api"
 import { useQuery } from "react-query";
 
 const SortFilter = (props) => {
@@ -24,19 +24,9 @@ const SortFilter = (props) => {
       select: (data) => data.data.results,
       retry: false,
     });
-
-  // const genresQuery = useQuery("genres", () => fetchMovieGenres, { reply: false })
-  //  console.log("GENRES:::", genresQuery)
-  //  genresQuery?.data?.then((val) =>
-  //    dispatch(getGenreFilter(val?.data?.genres))
-  //  )
-
   const [totalPages] = useState(1);
   const [page, setPage] = useState(1);
-
   const [loading] = useState(false);
-
-
 
   return (
     <>

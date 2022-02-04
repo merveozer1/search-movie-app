@@ -24,3 +24,7 @@ export const fetchLatestMovies = (movieId) => BASE_AXIOS.get(`movie/latest/${mov
 
 export const fetchMovieGenres = () =>BASE_AXIOS.get(`/genre/movie/list?api_key=${API_KEY}`);
 
+export const fetchSortFilter = (page, sortValue, startDate, endDate, genre) =>
+BASE_AXIOS.get(
+    `/discover/movie?api_key=${API_KEY}&page=${page}&sort_by=${sortValue}&release_date.lte=${startDate}&release_date.gte=${endDate}&with_genres=${genre}`
+  );
