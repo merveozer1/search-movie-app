@@ -1,3 +1,22 @@
+This project is the UP School Front-End Development Program <b>Capstone Project.</b>
+<p>
+ <a className='text-warning' href="https://developers.themoviedb.org/3">Click</a>  to access the API used in the project.
+
+  <b>Tools and Technologies:</b>
+  <ul>
+  <li>JavaScript </li>
+  <li>React</li>
+  <li>Redux </li>
+  <li>React-Persist </li>
+  <li>Styled-Component </li>
+  <li>CSS </li>
+  <li>React-Bootstrap </li>
+  </ul>
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
