@@ -61,7 +61,7 @@ useEffect(() =>{
                     <Card.Text className="text-muted flex-fill" >
                       IMDB SCORE: {item.vote_average}
                     </Card.Text>
-                    <Card.Text className=""> { < Icons movieId={item.id} movieTitle={item.title} isFavorite={state.user.favoritesList.favoritesFilms.some((x) => x.id === item.id) ? true : false} /> }
+                    <Card.Text className=""> { < Icons movieId={item.id} movieTitle={item.title} isFavorite={state.user.favoritesList.favoritesFilms.some((x) => x.id === item.id) ? true : false} isRead={state.user.seenList.seenFilms.some((x) => x.id === item.id) ? true : false} /> }
                     </Card.Text>
                   </Card.Body>
                 </Card>

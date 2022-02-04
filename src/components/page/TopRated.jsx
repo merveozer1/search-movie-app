@@ -39,10 +39,10 @@ function TopRated(props){
  <div className="row m-3 justify-content-start" >
  {
 data?.map(item => item?.data?.data?.results?.map((item) => (
-    <div key={item.id} className="col-sm" >
-      <Card style={{padding: '4px', margin:'5px'}}>
+    <div key={item.id} className="col-sm py-2" >
+      <Card >
         <Link to={"/detail/" + item.id} style={{ textDecoration: "none" }}>
-          <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500` + item.poster_path}  />
+          <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500` + item.poster_path} style={{ width:'290px', height:'420px'}} />
         </Link>
         <Card.Body style={{ width: '18rem', height: '15rem' }} className="d-flex flex-column justify-content-end py-3" >
           <Card.Title className="text-muted">{item.title}</Card.Title>
