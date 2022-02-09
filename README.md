@@ -7,7 +7,7 @@ This project is the UP School Front-End Development Program <b>Capstone Project.
   <li>JavaScript </li>
   <li>React</li>
   <li>Redux </li>
-  <li>React-Persist </li>
+  <li>Redux-Persist </li>
   <li>Styled-Component </li>
   <li>CSS </li>
   <li>React-Bootstrap </li>
